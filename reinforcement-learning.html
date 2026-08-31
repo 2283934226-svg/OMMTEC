@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Exploring how robots learn to act. OMMTEC, Shanghai Institute of Technology."><title>Robot Reinforcement Learning — OMMTEC</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="flow.css"></head>
+<body class="rl-page">
+<main class="work-page">
+<a class="work-link" href="index.html#research">← Back to research</a>
+<h1>Robot Reinforcement Learning</h1>
+<p class="eyebrow">OMMTEC / Research direction 02</p>
+<div class="work-body"><p class="lead">From robot geometry to learning in simulation.</p><p>Robot reinforcement learning is one of our research directions. These snapshots document the robot modeling and inspection work that helps prepare a platform for simulation-based learning.</p></div>
+<section class="rl-study" aria-labelledby="urdf-heading">
+  <div class="rl-study-copy"><p class="eyebrow">01 / Robot description</p><h2 id="urdf-heading">Building the URDF model</h2><p>The first image shows a robot description being edited alongside a three-dimensional preview. The visible URDF includes a base link, mass and inertia properties, mesh references, and geometric offsets.</p><p>This stage connects the mechanical model with its software description. Checking how the meshes and coordinate frames line up is part of preparing the robot for subsequent simulation work.</p></div>
+  <figure><a href="images/rl-urdf.webp" target="_blank" rel="noopener" aria-label="Open full-size URDF screenshot in a new tab"><img src="images/rl-urdf.webp" alt="URDF source code and a robot mesh preview side by side" width="1917" height="1119" loading="lazy" decoding="async"></a><figcaption>URDF editing and visual inspection. Click the image to inspect the code and model at full size.</figcaption></figure>
+</section>
+<section class="rl-study rl-study-secondary" aria-labelledby="model-heading">
+  <div class="rl-study-copy"><p class="eyebrow">02 / Model inspection</p><h2 id="model-heading">Inspecting the assembled robot</h2><p>The second view shows the assembled robot on a reference grid, with coordinate markers and information for the selected base link. It provides a closer look at the relative placement of the chassis, wheels, and upper structure.</p><p>Visual inspection helps identify alignment and configuration issues before training. A rendered model alone does not establish that its dynamics are validated or that a control policy has been trained.</p></div>
+  <figure><a href="images/rl-model.webp" target="_blank" rel="noopener" aria-label="Open full-size robot model screenshot in a new tab"><img src="images/rl-model.webp" alt="Assembled wheeled robot model with coordinate markers and base-link information" width="826" height="675" loading="lazy" decoding="async"></a><figcaption>Three-dimensional model inspection with the base link selected.</figcaption></figure>
+</section>
+<section class="rl-study" aria-labelledby="rl-video-heading">
+  <div class="rl-study-copy"><p class="eyebrow">03 / Work in progress</p><h2 id="rl-video-heading">Video from our robot learning work</h2><p>A video shared from our ongoing work in this research direction, presented alongside the model preparation and inspection images above. Details of the experimental setup and training results will be added as the project documentation develops.</p></div>
+  <figure><div class="rm-video-player"><video muted loop playsinline preload="none" aria-label="Robot learning project video"><source data-src="media/rl-progress.mp4" type="video/mp4"></video><div class="rm-video-controls"><button type="button" data-play>Play</button><button type="button" data-sound aria-label="Turn sound on" aria-pressed="false">Sound off</button></div></div><figcaption>Project video. Plays silently and loops when in view; use the lower-right sound button to listen.</figcaption></figure>
+</section>
+<div class="work-body"><h2>Toward reinforcement learning</h2><p>A prepared robot model is a starting point for defining a simulation environment, observations, actions, and rewards. Training and evaluation then test how a learned policy behaves. We will add our specific training setup and results as those materials become available.</p><a class="work-link" href="mailto:2283934226@qq.com">Contact the team <span aria-hidden="true">↗</span></a></div>
+<a class="work-link" href="index.html#gallery">Visit our gallery <span aria-hidden="true">↗</span></a>
+</main>
+<script src="rm-video.js"></script>
+</body></html>
