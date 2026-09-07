@@ -1,0 +1,35 @@
+.hero {
+  isolation: isolate;
+  background: #fbfcff;
+  animation: none;
+}
+
+.hero::before { content: none; }
+
+.particle-field {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: .8;
+}
+
+.hero .center-name {
+  text-shadow: 0 2px 18px rgba(255, 255, 255, .96);
+}
+
+.hero .center-name em {
+  color: transparent;
+  background: linear-gradient(96deg, #16a89c 8%, #477ae2 42%, #8157ce 67%, #df4c91 92%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+@media (max-width: 720px) {
+  .particle-field { opacity: .68; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .particle-field { opacity: .5; }
+}
