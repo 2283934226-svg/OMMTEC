@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Office of Modern Manufacturing Technology Experiment Center at Shanghai Institute of Technology." />
     <title>OMMTEC — Shanghai Institute of Technology</title>
+    <script src="theme.js"></script>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="flow.css" />
     <link rel="stylesheet" href="hero-flow.css" />
+    <link rel="stylesheet" href="surface-design.css" />
+    <link rel="stylesheet" href="immersive.css" />
+    <link rel="stylesheet" href="theme.css" />
   </head>
   <body>
     <header class="nav">
@@ -18,8 +22,22 @@
       </nav>
     </header>
 
+    <aside class="scene-rail" aria-label="Page sections">
+      <div class="scene-count"><strong data-scene-current>01</strong><small>/ 07</small></div>
+      <div class="scene-line" aria-hidden="true"><span></span></div>
+      <nav class="scene-links" aria-label="Section navigation">
+        <a class="is-active" href="#top" data-label="Overview" aria-label="Overview" aria-current="location"></a>
+        <a href="#about" data-label="About" aria-label="About"></a>
+        <a href="#research" data-label="Research" aria-label="Research"></a>
+        <a href="#people" data-label="People" aria-label="People"></a>
+        <a href="#gallery" data-label="Gallery" aria-label="Gallery"></a>
+        <a href="#honors" data-label="Honors" aria-label="Honors"></a>
+        <a href="#contact" data-label="Contact" aria-label="Contact"></a>
+      </nav>
+    </aside>
+
     <main id="top">
-      <section class="hero">
+      <section class="hero scene" data-scene="overview">
         <canvas class="particle-field" aria-hidden="true"></canvas>
         <p class="eyebrow">Shanghai Institute of Technology · Fengxian Campus</p>
         <h1 class="center-name"><span>Office of</span><em>Modern Manufacturing</em><span>Technology Experiment Center</span></h1>
@@ -32,17 +50,22 @@
         <div class="cursor-readout" aria-hidden="true"><span>OMMTEC / 01</span><b>+</b></div>
       </section>
 
-      <section id="about" class="about section">
+      <section id="about" class="about section scene" data-scene="about">
         <p class="section-label">01 / About us</p>
         <div class="about-copy">
           <h2>A small, hands-on team with a <em>serious appetite</em> for robotics.</h2>
           <p>Based in Room A106, First Discipline Building, Fengxian Campus, Shanghai Institute of Technology, we explore modern manufacturing through real robots, real competitions, and intelligent control.</p>
           <p>Our work bridges mechanical design, embedded systems, perception, and machine learning—from the intensity of RoboMaster to the open frontier of reinforcement learning.</p>
         </div>
-        <aside class="location-card"><span>Our base</span><strong>First Discipline Building<br />A106</strong><small>Fengxian Campus<br />Shanghai, China</small></aside>
+        <aside class="location-card" aria-label="Our laboratory location">
+          <div class="location-card-head"><span class="location-kicker">Our base</span><span class="location-beacon" aria-hidden="true"></span></div>
+          <strong class="room-code">A106</strong>
+          <p class="building-name">First Discipline Building</p>
+          <div class="location-card-foot"><small>Fengxian Campus</small><small>Shanghai, China</small></div>
+        </aside>
       </section>
 
-      <section id="research" class="research section">
+      <section id="research" class="research section scene" data-scene="research">
         <p class="section-label">02 / What we explore</p>
         <div class="research-head"><h2>Research that leaves<br />the <em>screen.</em></h2><p>We develop capable machines by uniting competition-driven engineering with exploratory research.</p></div>
         <div class="research-list">
@@ -53,7 +76,7 @@
         </div>
       </section>
 
-      <section id="people" class="people section">
+      <section id="people" class="people section scene" data-scene="people">
         <p class="section-label">03 / People</p>
         <div class="people-head"><h2>The people behind<br />the <em>machines.</em></h2><p>We are a compact team of builders, researchers, and competitors.</p></div>
         <div class="member-grid">
@@ -64,7 +87,7 @@
         </div>
       </section>
 
-      <section id="gallery" class="gallery section">
+      <section id="gallery" class="gallery section scene" data-scene="gallery">
         <div class="gallery-intro reveal"><p class="section-label">04 / Gallery</p><div><h2>In the <em>workshop.</em></h2><p>Prototypes, field tests, late-night debugging, and the people that make them possible.</p></div></div>
         <div class="gallery-grid">
           <button class="gallery-item gallery-wide reveal" data-image="images/gallery-field-test-large.webp" data-caption="Field test / mobile robotics"><img src="images/gallery-field-test.webp" loading="lazy" decoding="async" width="1000" height="750" alt="A student testing a mobile robot" /><span>01 / Field test</span></button>
@@ -79,7 +102,7 @@
         </div>
       </section>
 
-      <section id="honors" class="honors section">
+      <section id="honors" class="honors section scene" data-scene="honors">
         <p class="section-label">05 / Honors & competitions</p>
         <div class="honors-layout"><h2>Built to<br /><em>be tested.</em></h2><div class="award-list">
           <article><span>National</span><h3>Second Prize</h3><p>17th China University Students Mechanical Engineering Innovation and Creativity Competition — Process Equipment Practice and Innovation Competition</p></article>
@@ -88,7 +111,7 @@
         </div></div>
       </section>
 
-      <section id="contact" class="contact">
+      <section id="contact" class="contact scene" data-scene="contact">
         <p class="eyebrow">Let's build something</p>
         <h2>Have a challenge<br />for a <em>robot?</em></h2>
         <a class="email" href="mailto:2283934226@qq.com">2283934226@qq.com <span aria-hidden="true">↗</span></a>
@@ -99,5 +122,6 @@
     <dialog class="lightbox" aria-label="Gallery image preview"><button class="lightbox-close" aria-label="Close gallery preview">×</button><button class="lightbox-prev" aria-label="Previous image">←</button><figure><img alt="" decoding="async" /><figcaption></figcaption></figure><button class="lightbox-next" aria-label="Next image">→</button></dialog>
     <script src="particles.js"></script>
     <script src="script.js"></script>
+    <script src="immersive.js"></script>
   </body>
 </html>
