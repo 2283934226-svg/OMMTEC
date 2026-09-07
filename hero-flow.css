@@ -33,3 +33,116 @@
 @media (prefers-reduced-motion: reduce) {
   .particle-field { opacity: .5; }
 }
+
+/* Architectural locator card for the laboratory base. */
+@media (min-width: 721px) {
+  .about { grid-template-columns: 22% minmax(0, 1fr) 260px; }
+}
+
+.location-card {
+  position: relative;
+  justify-content: flex-start;
+  min-height: 300px;
+  padding: 25px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 28px 28px 6px 28px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, .9), rgba(218, 226, 255, .62)) !important;
+  box-shadow: 0 22px 55px rgba(70, 83, 130, .14), inset 0 0 0 1px rgba(83, 101, 160, .14);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 28px 65px rgba(70, 83, 130, .2), inset 0 0 0 1px rgba(83, 101, 160, .18);
+}
+
+.location-card::before {
+  content: "";
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  right: -86px;
+  top: -76px;
+  border: 1px solid rgba(78, 95, 190, .17);
+  border-radius: 50%;
+  box-shadow: 0 0 0 26px rgba(78, 95, 190, .045), 0 0 0 52px rgba(78, 95, 190, .025);
+}
+
+.location-card-head,
+.location-card-foot {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location-card .location-kicker {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.location-beacon {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #4e5fca;
+  border-radius: 50%;
+  background: #fff;
+  animation: base-beacon 2.2s ease-out infinite;
+}
+
+.location-card .room-code {
+  position: relative;
+  z-index: 1;
+  margin: 46px 0 0;
+  color: #273458;
+  font-size: clamp(58px, 5vw, 76px);
+  font-weight: 400;
+  line-height: .86;
+  letter-spacing: -.09em;
+}
+
+.location-card .building-name {
+  position: relative;
+  z-index: 1;
+  max-width: 175px;
+  margin-top: 15px;
+  color: #39445e;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.location-card-foot {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(58, 72, 112, .16);
+}
+
+.location-card-foot small {
+  color: #657087;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+@keyframes base-beacon {
+  0% { box-shadow: 0 0 0 0 rgba(78, 95, 202, .36); }
+  70%, 100% { box-shadow: 0 0 0 10px rgba(78, 95, 202, 0); }
+}
+
+@media (max-width: 720px) {
+  .location-card {
+    width: min(100%, 360px);
+    min-height: 260px;
+  }
+  .location-card .room-code { margin-top: 35px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .location-beacon { animation: none; }
+}
