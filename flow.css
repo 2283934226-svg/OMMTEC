@@ -24,7 +24,12 @@
 .slam-page .work-page>h1{animation-delay:.05s}
 .slam-page .work-page>.eyebrow{animation-delay:.1s}
 .slam-page .work-page>.work-body{animation-delay:.2s}
+.slam-page .work-page>.slam-study{animation-delay:.25s}
 .slam-page .work-page>.work-link:last-child{animation-delay:.3s}
+.slam-study{margin:0 0 48px;max-width:980px}
+.slam-study img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid rgba(210,240,246,.24);background:#121820}
+.slam-study figcaption{padding-top:15px;color:#c1d0d6;font-size:13px;line-height:1.7}
+.slam-study figcaption span{display:block;margin-bottom:6px;color:#9fe5eb;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
 @media(max-width:720px){.slam-page .work-body{padding:18px}.slam-page::before{background-size:auto 100%;background-position:center}}
 @media(prefers-reduced-motion:reduce){.slam-page .work-page>*{animation:none!important}}
 .manufacturing-page{background:#101411}
@@ -139,7 +144,7 @@
   .rm-page .rm-media > figure { animation: none !important; }
 }
 .rm-video-feature{grid-column:auto}
-.rm-video-feature:nth-child(4){animation-delay:.3s!important}
+.rm-video-feature:nth-child(4),.rm-video-feature:nth-child(5){animation-delay:.3s!important}
 .rm-video-player{position:relative;overflow:hidden;border-radius:12px;background:#101522}
 .rm-video-controls{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;gap:16px;padding:24px 16px 16px;background:linear-gradient(transparent,rgba(0,0,0,.7))}
 .rm-video-controls button{border:1px solid rgba(255,255,255,.6);border-radius:30px;background:rgba(15,22,40,.85);color:white;padding:10px 16px;cursor:pointer;font:inherit;font-size:12px}
