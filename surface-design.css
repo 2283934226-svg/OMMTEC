@@ -1,0 +1,119 @@
+/* A continuous technical canvas: one shared surface, several quiet data textures. */
+main#top {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #edf1f6;
+  background-image: radial-gradient(rgba(61, 75, 111, .11) .55px, transparent .75px);
+  background-size: 9px 9px;
+  animation: none;
+}
+
+main#top::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 760px;
+  bottom: 0;
+  left: 3.2vw;
+  width: 1px;
+  background: repeating-linear-gradient(to bottom, rgba(75, 91, 137, .28) 0 7px, transparent 7px 15px);
+  pointer-events: none;
+}
+
+main#top > * {
+  position: relative;
+  z-index: 1;
+}
+
+.section,
+#contact {
+  isolation: isolate;
+}
+
+.section::after,
+#contact::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: -20px;
+  pointer-events: none;
+  opacity: .82;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 13%, #000 87%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 13%, #000 87%, transparent 100%);
+  animation: surface-drift 16s ease-in-out infinite alternate;
+}
+
+.section > *,
+#contact > * {
+  position: relative;
+  z-index: 1;
+}
+
+.about::after {
+  background-image:
+    linear-gradient(rgba(76, 98, 164, .075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(76, 98, 164, .075) 1px, transparent 1px),
+    radial-gradient(circle at 82% 32%, rgba(121, 141, 220, .2), transparent 24%);
+  background-size: 48px 48px, 48px 48px, 100% 100%;
+}
+
+.research::after {
+  background-image:
+    repeating-linear-gradient(128deg, transparent 0 64px, rgba(42, 130, 109, .085) 64px 65px),
+    repeating-linear-gradient(52deg, transparent 0 96px, rgba(42, 130, 109, .055) 96px 97px),
+    radial-gradient(circle at 18% 54%, rgba(104, 205, 175, .18), transparent 27%);
+}
+
+.people::after {
+  background-image:
+    radial-gradient(circle, rgba(166, 108, 83, .14) 1.2px, transparent 1.5px),
+    radial-gradient(circle at 76% 38%, rgba(239, 189, 143, .22), transparent 25%);
+  background-size: 25px 25px, 100% 100%;
+  background-position: 0 0, 0 0;
+}
+
+.gallery::after {
+  background-image:
+    repeating-linear-gradient(135deg, transparent 0 31px, rgba(104, 82, 164, .07) 31px 32px),
+    repeating-linear-gradient(45deg, transparent 0 47px, rgba(104, 82, 164, .045) 47px 48px),
+    radial-gradient(circle at 50% 50%, rgba(156, 132, 220, .17), transparent 34%);
+}
+
+.honors::after {
+  background-image:
+    radial-gradient(circle at 82% 28%, transparent 0 84px, rgba(70, 98, 160, .12) 85px 86px, transparent 87px 126px, rgba(70, 98, 160, .075) 127px 128px, transparent 129px),
+    linear-gradient(rgba(69, 92, 148, .055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(69, 92, 148, .055) 1px, transparent 1px);
+  background-size: 100% 100%, 64px 64px, 64px 64px;
+}
+
+#contact::before {
+  background-image:
+    radial-gradient(circle at 50% 44%, transparent 0 110px, rgba(159, 73, 126, .11) 111px 112px, transparent 113px 174px, rgba(159, 73, 126, .07) 175px 176px, transparent 177px),
+    linear-gradient(90deg, transparent 49.92%, rgba(124, 79, 124, .08) 50%, transparent 50.08%);
+  background-size: 100% 100%;
+}
+
+@keyframes surface-drift {
+  from { transform: translate3d(-8px, 5px, 0); }
+  to { transform: translate3d(12px, -9px, 0); }
+}
+
+@media (max-width: 720px) {
+  main#top::before {
+    top: 675px;
+    left: 2.4vw;
+  }
+  .section::after,
+  #contact::before {
+    opacity: .62;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section::after,
+  #contact::before {
+    animation: none;
+  }
+}
