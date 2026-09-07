@@ -7,7 +7,11 @@
   if (!context) return;
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const colors = ['#111827', '#17a99a', '#426ed5', '#7256c7', '#dc4b8b'];
+  const palettes = {
+    light: ['#111827', '#17a99a', '#426ed5', '#7256c7', '#dc4b8b'],
+    dark: ['#f4f7ff', '#39d5c2', '#6f98ff', '#a885f0', '#ff72af']
+  };
+  let colors = palettes[document.documentElement.dataset.theme] || palettes.light;
   let width = 0;
   let height = 0;
   let density = 0;
@@ -87,13 +91,14 @@
     const bounds = hero.getBoundingClientRect();
     width = Math.max(1, Math.round(bounds.width));
     height = Math.max(1, Math.round(bounds.height));
-    const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
+    const limitedDevice = (navigator.deviceMemory && navigator.deviceMemory <= 4) || navigator.hardwareConcurrency <= 4;
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, limitedDevice ? 1.25 : 1.5);
     canvas.width = Math.round(width * pixelRatio);
     canvas.height = Math.round(height * pixelRatio);
     canvas.style.width = `${width}px`;
     canvas.style.height = `${height}px`;
     context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
-    const desiredDensity = width < 720 ? 72 : 132;
+    const desiredDensity = width < 720 ? (limitedDevice ? 42 : 58) : (limitedDevice ? 82 : 132);
     if (density !== desiredDensity) {
       density = desiredDensity;
       particles = Array.from({ length: density }, () => createParticle(true));
@@ -110,6 +115,10 @@
   hero.addEventListener('pointerleave', () => {
     pointer.targetX = 0;
     pointer.targetY = 0;
+  });
+  window.addEventListener('ommtec-theme-change', event => {
+    colors = palettes[event.detail.theme] || palettes.light;
+    particles.forEach(particle => { particle.color = colors[Math.floor(Math.random() * colors.length)]; });
   });
 
   new ResizeObserver(resize).observe(hero);
