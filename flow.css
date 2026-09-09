@@ -25,11 +25,20 @@
 .slam-page .work-page>.eyebrow{animation-delay:.1s}
 .slam-page .work-page>.work-body{animation-delay:.2s}
 .slam-page .work-page>.slam-study{animation-delay:.25s}
-.slam-page .work-page>.work-link:last-child{animation-delay:.3s}
+.slam-page .work-page>.slam-video{animation-delay:.3s}
+.slam-page .work-page>.work-link:last-child{animation-delay:.35s}
 .slam-study{margin:0 0 48px;max-width:980px}
 .slam-study img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid rgba(210,240,246,.24);background:#121820}
 .slam-study figcaption{padding-top:15px;color:#c1d0d6;font-size:13px;line-height:1.7}
 .slam-study figcaption span{display:block;margin-bottom:6px;color:#9fe5eb;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.slam-video{margin:56px 0 72px;max-width:980px}
+.slam-video-copy{max-width:780px;margin-bottom:28px}
+.slam-video .eyebrow{color:var(--accent);margin-bottom:16px}
+.slam-video h2{font-size:32px;letter-spacing:-.035em}
+.slam-video-copy>p:not(.eyebrow){color:var(--muted);line-height:1.8}
+.slam-video figure{margin:0}
+.slam-video video{display:block;width:100%;aspect-ratio:8/5;object-fit:contain;background:#101522}
+.slam-video figcaption{padding-top:15px;color:var(--muted);font-size:13px;line-height:1.7}
 @media(max-width:720px){.slam-page .work-body{padding:18px}.slam-page::before{background-size:auto 100%;background-position:center}}
 @media(prefers-reduced-motion:reduce){.slam-page .work-page>*{animation:none!important}}
 .manufacturing-page{background:#101411}
@@ -149,6 +158,7 @@
 .rm-video-controls{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;gap:16px;padding:24px 16px 16px;background:linear-gradient(transparent,rgba(0,0,0,.7))}
 .rm-video-controls button{border:1px solid rgba(255,255,255,.6);border-radius:30px;background:rgba(15,22,40,.85);color:white;padding:10px 16px;cursor:pointer;font:inherit;font-size:12px}
 .rm-video-controls button:hover{background:#455989}
+.rm-video-controls button:disabled{opacity:.62;cursor:default;background:rgba(15,22,40,.72)}
 .rm-video-controls button:focus-visible{outline:2px solid white;outline-offset:3px}
 /* Arena photograph stays behind the RM page only; original scene is preserved. */
 .rm-page { background: #0c101c; }
