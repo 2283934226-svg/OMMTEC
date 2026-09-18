@@ -120,7 +120,6 @@
     colors = palettes[event.detail.theme] || palettes.light;
     particles.forEach(particle => { particle.color = colors[Math.floor(Math.random() * colors.length)]; });
   });
-
   new ResizeObserver(resize).observe(hero);
   resize();
 
