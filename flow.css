@@ -28,6 +28,7 @@
 .slam-page .work-page>.slam-video{animation-delay:.3s}
 .slam-page .work-page>.work-link:last-child{animation-delay:.35s}
 .slam-study{margin:0 0 48px;max-width:980px}
+.slam-study-portrait{max-width:720px}
 .slam-study img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid rgba(210,240,246,.24);background:#121820}
 .slam-study figcaption{padding-top:15px;color:#c1d0d6;font-size:13px;line-height:1.7}
 .slam-study figcaption span{display:block;margin-bottom:6px;color:#9fe5eb;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
