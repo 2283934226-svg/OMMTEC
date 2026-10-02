@@ -28,6 +28,17 @@ if (!reduceMotion && hero && readout) {
 }
 
 const galleryItems = [...document.querySelectorAll('.gallery-item')];
+const galleryGrid = document.querySelector('.gallery-grid');
+const galleryToggle = document.querySelector('.gallery-toggle');
+if (galleryGrid && galleryToggle) {
+  galleryToggle.addEventListener('click', () => {
+    const expanded = galleryGrid.classList.toggle('is-collapsed') === false;
+    galleryToggle.setAttribute('aria-expanded', String(expanded));
+    galleryToggle.innerHTML = expanded
+      ? 'Collapse gallery <span aria-hidden="true">↓</span>'
+      : 'View all 15 moments <span aria-hidden="true">↓</span>';
+  });
+}
 const lightbox = document.querySelector('.lightbox');
 if (lightbox && galleryItems.length) {
   const lightboxImage = lightbox.querySelector('img');
