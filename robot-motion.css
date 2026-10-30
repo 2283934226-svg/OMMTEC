@@ -4,13 +4,15 @@
   position: fixed;
   inset: 0;
   background: url("robot-motion-background.webp") center 40% / cover no-repeat;
+  filter: brightness(1.13) contrast(1.03);
+  animation: motion-background-in 1s cubic-bezier(.22,.61,.36,1) both;
   pointer-events: none;
 }
 .motion-page .work-page {
   position: relative;
   isolation: isolate;
   color: var(--ink);
-  background: linear-gradient(180deg, rgba(248, 249, 252, .76), rgba(245, 247, 251, .88) 38%, rgba(239, 242, 248, .96));
+  background: linear-gradient(180deg, rgba(248, 249, 252, .62), rgba(245, 247, 251, .80) 38%, rgba(239, 242, 248, .91));
   animation: none;
 }
 .motion-page h1 { text-shadow: 0 2px 22px rgba(255, 255, 255, .8); }
@@ -34,7 +36,7 @@
 .motion-video-grid figcaption span { display: block; margin-bottom: 8px; color: var(--accent); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
 .motion-playback-note { margin-top: 24px; font-size: 11px; line-height: 1.7; color: var(--muted); }
 .motion-page .motion-outlook { margin-bottom: 25px; padding-top: 28px; border-top: 1px solid var(--line); }
-.motion-page .work-page > * { animation: rm-enter .7s cubic-bezier(.22,.61,.36,1) both; }
+.motion-page .work-page > * { animation: motion-content-in .7s cubic-bezier(.22,.61,.36,1) both; }
 .motion-page .work-page > h1 { animation-delay: .05s; }
 .motion-page .work-page > .eyebrow { animation-delay: .1s; }
 .motion-page .work-page > .motion-intro { animation-delay: .15s; }
@@ -42,7 +44,15 @@
 .motion-page .work-page > .motion-outlook { animation-delay: .25s; }
 .motion-page .work-page > .work-link:last-child { animation-delay: .3s; }
 html[data-theme="dark"] .motion-page .work-page {
-  background: linear-gradient(180deg, rgba(7, 10, 17, .58), rgba(8, 12, 20, .85) 38%, rgba(8, 12, 20, .96));
+  background: linear-gradient(180deg, rgba(7, 10, 17, .44), rgba(8, 12, 20, .73) 38%, rgba(8, 12, 20, .88));
+}
+@keyframes motion-background-in {
+  from { opacity: 0; transform: scale(1.035); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes motion-content-in {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 html[data-theme="dark"] .motion-page h1 { text-shadow: 0 3px 24px rgba(0,0,0,.6); }
 html[data-theme="dark"] .motion-page .work-link { background: rgba(12, 20, 35, .8); }
@@ -53,5 +63,6 @@ html[data-theme="dark"] .motion-page .work-link { background: rgba(12, 20, 35, .
   .motion-page .work-body { margin: 38px 0; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .motion-page::before,
   .motion-page .work-page > * { animation: none !important; }
 }
