@@ -35,6 +35,14 @@ main#top > * {
   font-weight: 400;
 }
 
+.research-list .zh-research {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--muted);
+  font: italic 12px/1.5 "Songti SC", "SimSun", serif;
+  letter-spacing: .08em;
+}
+
 .zh-note {
   display: inline-block;
   margin-left: .75em;
