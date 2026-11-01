@@ -36,7 +36,7 @@ if (galleryGrid && galleryToggle) {
     galleryToggle.setAttribute('aria-expanded', String(expanded));
     galleryToggle.innerHTML = expanded
       ? 'Collapse gallery <span aria-hidden="true">↓</span>'
-      : 'View all 15 moments <span aria-hidden="true">↓</span>';
+      : `View all ${galleryItems.length} moments <span aria-hidden="true">↓</span>`;
   });
 }
 const lightbox = document.querySelector('.lightbox');
